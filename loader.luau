@@ -1,5 +1,4 @@
-local token = getgenv().Token
-local gameOption = getgenv().gameOption 
+local config = getgenv().Config 
 
 local function loadstr(path)
     local url = 'https://api.github.com/repos/Karshtakavaar/Projects/contents/' .. path .. '?ref=main' 
@@ -8,7 +7,7 @@ local function loadstr(path)
         Url = url, 
         Method = 'GET',
         Headers = {
-            ['Authorization'] = 'token ' .. token, 
+            ['Authorization'] = 'token ' .. config.Token, 
             ['Accept'] = 'application/vnd.github.v3.raw',
             ['User-Agent'] = 'LuaScript'
         }
@@ -27,10 +26,10 @@ local gameList = {
     Reincarnated = {id = 126642046443487, path = volt_str .. 'games/reincarnated.luau'} -- for now
 }
 
-local selected = gameList[gameOption]
+local selected = gameList[config.gameOption]
 if selected.id ~= game.PlaceId then error('Invalid Game') end 
 
 
-getgenv().Library = loadstr(volt_str .. 'shared/interface_new.lua')
+config.Library = loadstr(volt_str .. 'shared/interface_new.lua')
 
 loadstr(selected.path)
