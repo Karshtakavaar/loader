@@ -30,6 +30,6 @@ local selected = gameList[config.gameOption]
 if selected.id ~= game.PlaceId then error('Invalid Game') end 
 
 
-getgenv().Library = loadstr(volt_str .. 'shared/interface_new.lua')
+config.Library = loadstr(volt_str .. 'shared/interface_new.lua')
 
 loadstr(selected.path)
