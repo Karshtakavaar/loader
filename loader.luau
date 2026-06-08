@@ -18,7 +18,7 @@ local function load(path)
     if response.Success then 
         return loadstring(response.Body)()
     else 
-        error(response.StatusCode .. ': ' .. response.StatusMessage)
+        error(response.StatusCode .. ' : ' .. response.StatusMessage)
     end
 end
 
