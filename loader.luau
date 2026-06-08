@@ -38,6 +38,6 @@ if selected.id ~= game.PlaceId then error('Invalid Game') end
 local selectedMenu = menuList[menu]
 if selectedMenu == nil then error('Invalid Menu') end 
 
-getgenv().Library = load(selectedMenu)
+getgenv().Library = loadstr(selectedMenu)
 
-load(selected.path)
+loadstr(selected.path)
