@@ -1,8 +1,8 @@
 local token = getgenv().Token
-local select = getgenv().Select 
+local gameOption = getgenv().gameOption 
 local menu = getgenv().Menu 
 
-local function load(path)
+local function loadstr(path)
     local url = 'https://api.github.com/repos/Karshtakavaar/Projects/contents/' .. path .. '?ref=main' 
 
     local response = request({
@@ -22,23 +22,22 @@ local function load(path)
     end
 end
 
-local volt_str = 'Volt/'
+local volt_str = 'Volt/' -- conveineinceince sajek
 
 local gameList = {
     Reincarnated = {id = 126642046443487, path = volt_str .. 'games/reincarnated.luau'} -- for now
 }
 local menuList = {
     Modern = volt_str .. 'shared/interface_new.lua',
-    -- Old = volt_str .. 'shared/interface_old.lua'
+    -- Old = volt_str .. 'shared/interface_old.lua' -- not doi ndis rn.
 }
 
-local selected = gameList[select]
+local selected = gameList[gameOption]
 if selected.id ~= game.PlaceId then error('Invalid Game') end 
 
 local selectedMenu = menuList[menu]
 if selectedMenu == nil then error('Invalid Menu') end 
 
-local B = load(selectedMenu)
-getgenv().Library = B
+getgenv().Library = load(selectedMenu)
 
 load(selected.path)
