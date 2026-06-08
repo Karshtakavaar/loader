@@ -38,7 +38,7 @@ if selected.id ~= game.PlaceId then error('Invalid Game') end
 local selectedMenu = menuList[menu]
 if selectedMenu == nil then error('Invalid Menu') end 
 
-local Library = loadstr('Volt/shared/interface_new.lua')
+local Library = 'hi'
 print(Library)
 
 --loadstr(selected.path)
