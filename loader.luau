@@ -29,7 +29,7 @@ local gameList = {
 }
 local menuList = {
     Modern = volt_str .. 'shared/interface_new.lua',
-    Old = volt_str .. 'shared/interface_old.lua'
+    --Old = volt_str .. 'shared/interface_old.lua'
 }
 
 local selected = gameList[select]
