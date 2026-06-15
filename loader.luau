@@ -33,7 +33,7 @@ end
 
 for _, v in next, gameList do 
     if _ == placeId then 
-        print(_ .. ' hi')
+        selected = v
     end
 end
 
