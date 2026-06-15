@@ -35,6 +35,7 @@ for _, v in next, gameList do
     if _ == placeId then 
         selected = v
     end
+    return selected
 end
 
 
