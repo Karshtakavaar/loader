@@ -1,11 +1,11 @@
 local config = getgenv().Config 
 local placeId = game.PlaceId
 local selected;
-local volt_str = 'Volt/games/'
+local volt_str = 'Volt/'
 
 local gameList = {
-    [126642046443487] = volt_str .. 'reincarnated.luau',
-    [97598239454123] = volt_str .. 'gag2.luau'
+    [126642046443487] = volt_str .. 'games/reincarnated.luau',
+    [97598239454123] = volt_str .. 'games/gag2.luau'
 }
 
 
