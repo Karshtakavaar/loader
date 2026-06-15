@@ -1,4 +1,6 @@
 local config = getgenv().Config 
+local placeId = game.PlaceId
+local selected;
 
 local function loadstr(path)
     local url = 'https://api.github.com/repos/Karshtakavaar/Projects/contents/' .. path .. '?ref=main' 
@@ -20,16 +22,22 @@ local function loadstr(path)
     end
 end
 
-local volt_str = 'Volt/' -- conveineinceince sajek
+local volt_str = 'Volt/games/' -- conveineinceince sajek
 
 local gameList = {
-    Reincarnated = {id = 126642046443487, path = volt_str .. 'games/reincarnated.luau'} -- for now
+    [126642046443487] = volt_str .. 'reincarnated.luau', -- for now
+    [97598239454123] = volt_str .. 'gag2.luau'
 }
 
-local selected = gameList[config.gameOption]
-if selected.id ~= game.PlaceId then error('Invalid Game') end 
+for _, v in next, gameList do 
+    if _ ~= placeId then error('Game Not Supported.') end 
+
+    if _ == placeId then 
+        selected = v 
+    end
+end
 
 
 config.Library = loadstr(volt_str .. 'shared/interface_new.lua')
 
-loadstr(selected.path)
+loadstr(selected)
