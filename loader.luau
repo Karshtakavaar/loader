@@ -31,7 +31,7 @@ local gameList = {
 
 for _, v in next, gameList do 
     if _ == placeId then 
-        print(v)
+        print(_ .. ' hi')
     end
 end
 
