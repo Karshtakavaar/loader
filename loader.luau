@@ -1,6 +1,13 @@
 local config = getgenv().Config 
 local placeId = game.PlaceId
 local selected;
+local volt_str = 'Volt/games/'
+
+local gameList = {
+    [126642046443487] = volt_str .. 'reincarnated.luau',
+    [97598239454123] = volt_str .. 'gag2.luau'
+}
+
 
 local function loadstr(path)
     local url = 'https://api.github.com/repos/Karshtakavaar/Projects/contents/' .. path .. '?ref=main' 
@@ -22,12 +29,7 @@ local function loadstr(path)
     end
 end
 
-local volt_str = 'Volt/games/' -- conveineinceince sajek
 
-local gameList = {
-    [126642046443487] = volt_str .. 'reincarnated.luau', -- for now
-    [97598239454123] = volt_str .. 'gag2.luau'
-}
 
 for _, v in next, gameList do 
     if _ == placeId then 
