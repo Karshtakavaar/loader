@@ -30,10 +30,8 @@ local gameList = {
 }
 
 for _, v in next, gameList do 
-    if _ ~= placeId then error('Game Not Supported.') end 
-
     if _ == placeId then 
-        selected = v 
+        print(v)
     end
 end
 
