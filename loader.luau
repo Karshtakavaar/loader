@@ -1,6 +1,5 @@
 local config = getgenv().Config 
 local placeId = game.PlaceId
-local selected;
 local volt_str = 'Volt/'
 
 local gameList = {
@@ -29,15 +28,7 @@ local function loadstr(path)
     end
 end
 
-
-
-for _, v in next, gameList do 
-    if _ == placeId then 
-        selected = v
-    end
-    return selected
-end
-
+local selected = gameList[placeId] or error('Game Not Supported.')
 
 config.Library = loadstr(volt_str .. 'shared/interface_new.lua')
 
