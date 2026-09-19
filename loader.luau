@@ -4,7 +4,8 @@ local volt_str = 'Volt/'
 
 local gameList = {
     [126642046443487] = volt_str .. 'games/reincarnated.luau',
-    [97598239454123] = volt_str .. 'games/gag2.luau'
+    [97598239454123] = volt_str .. 'games/gag2.luau',
+    [15419987333] = volt_str .. 'games/craftwars_random.lua'
 }
 
 
